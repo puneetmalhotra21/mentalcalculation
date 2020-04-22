@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+	
+	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	
+	<style>
+			   * {
+			margin: 0;
+			padding: 0;
+			font-family: 'Lato', sans-serif;
+		}
+
+		.progress {
+			position: absolute;   
+			height: 160px;
+			width: 160px;
+			cursor: pointer;
+			top: 50%;
+			left: 50%;
+			margin: -80px 0 0 -80px;
+		}
+
+		.progress-circle {
+		  transform: rotate(-90deg);
+			margin-top: -40px;
+		}
+
+		.progress-circle-back {
+			fill: none; 
+			stroke: #D2D2D2;
+			stroke-width:10px;
+		}
+
+		.progress-circle-prog {
+			fill: none; 
+			stroke: #24d32e;
+			stroke-width: 10px;  
+			stroke-dasharray: 0 999;    
+			stroke-dashoffset: 0px;
+			transition: stroke-dasharray 0.7s linear 0s;
+		}
+
+		.progress-text {
+			width: 100%;
+			position: absolute;
+			top: 60px;
+			text-align: center;
+			font-size: 2em;
+		}
+	</style>
+	</head>
+	<body>
+		<div class="progress">
+		AAA	<svg class="progress-circle" width="200px" height="200px" xmlns="http://www.w3.org/2000/svg">
+				<circle class="progress-circle-back"
+						cx="80" cy="80" r="74"></circle>
+				<circle class="progress-circle-prog"
+						cx="80" cy="80" r="74"></circle>
+			</svg>
+			  <div class="progress-text" id="dId" data-progress="0">60%</div>
+		</div>	
+	</body>
+	<script  type="text/javascript">
+			   function progressBar(progressVal,totalPercentageVal = 100) {
+					var strokeVal = (4.64 * 100) /  totalPercentageVal;
+					var x = document.querySelector('.progress-circle-prog');
+					x.style.strokeDasharray = progressVal * (strokeVal) + ' 999';
+					var el = document.querySelector('.progress-text'); 
+					var from = $('.progress-text').data('progress');
+					$('.progress-text').data('progress', progressVal);
+					var start = new Date().getTime();
+				  
+					setTimeout(function() {
+						var now = (new Date().getTime()) - start;
+						var progress = now / 700;
+						el.innerHTML = progressVal / totalPercentageVal * 100 + '%';
+						if (progress < 1) setTimeout(arguments.callee, 10);
+					}, 10);
+
+				}
+        var x =50;
+		progressBar(x,200);
+		document.getElementById("dId").innerHTML= (x/200)*100;
+
+	 </script>
+</html>

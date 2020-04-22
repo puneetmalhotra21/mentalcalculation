@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="resources/CSS/blog.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script>
+var app = angular.module('tempApp', []);
+app.controller('tempCntrlr', function($scope, $interval) {
+  
+  $scope.showNum = function() {
+	  $scope.count = 0;
+		var x= $interval(function () {
+			  $scope.count++;
+			  ;
+		  if($scope.count>=1){
+			   $scope.showVal=false;
+			   $interval.cancel(x);
+			   console.log('asd');
+		  }
+		  
+		}, 500);
+	 
+    };
+	
+	$scope.showLst = function() {
+	  $scope.hideLst=false;
+	   $scope.count = 0;
+		var x= $interval(function () {
+			  $scope.count++;
+		  if($scope.count>=4){
+			    $scope.hideLst=true;
+			   $interval.cancel(x);
+			   console.log('asd');
+		  }
+		  
+		}, 1000);
+    };
+	
+  
+});
+</script>
+ 
+</head>
+
+<body ng-app="tempApp" ng-controller="tempCntrlr" ng-init="showVal=false;hideLst=true">
+<div class="container mt-3">
+  <!-- <h2>Trick or Mental Calculation</h2>  -->
+  <br>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home"><span style="color:#b28d42;font-weight: 600;">Trick Jroori hai?</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu1"> What is mental Calculation?</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu2">Bimari Ka Ilaaj</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content" style="font-family: times roman;">
+    <div id="home" class="container tab-pane active"><br>
+      <br/><span class="highlted">Do you think Trick is necessary? </span>: Best hai! agar yaad rahe to we can be very fast with our calculation. And this true! Jo calculation minutes mai hoti hai that can be done in less than 1 second. <span class="highlted"> To fir hum mental calculation ki baat kyu kare?</span> why does it need? Lets have another question: What if trick yaad na rahe?
+        <br/><br/>
+		
+		Can you answer these : 88*7, 65*6,79*14 ? If you can answer, congratulation because you are among 5% student who have learnt Tricks and Table.
+		
+		But what if,Trick ya Table yaad na ho to? 
+		<br/>If you were not quick to answer above question, <span style="color:red">then you are among 95%.</span>
+		
+		You will be having following symptoms:
+		<ul>
+		<li>High Presurre in Eaxm</li>
+		<li>Bhool Jaane ka dar</li>
+		<li>App vo hai jo 2*2=8 bhi bol dete hai presure mai</li>
+		<li>Agar ek baar confidence bigda aapka, fir aap poore exam mai Tricks use nahi kar paate ho</li>
+		</ul>
+		<br/>
+		So when you are thinking of Tricks, to yaad rakho upar waale symptoms bhi saath aayenge. To fir kya kare? Ab dimag hmara computer to hai nahi ki seconds mai calculate kr lenge. Then what ? MENTAL Calculation, lo fir wahi abhi to kha tha dimag computer nahi hai or ab fir mental calculation par aa gaye.
+		
+		
+    </div>
+    <div id="menu1" class="container tab-pane fade" > 
+	    <div dir="ltr" style="text-align: left;" trbidi="on"  > 
+	        <br/> <br>
+			<p style="line-height: 1; text-align: justify;"><span style="color: rgb(33, 37, 41); font-family: Calibri, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;"><u>Lets start with below question:</u>-</span></p>
+			<p style="line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><span style="color: rgb(33, 37, 41); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;"><strong>Question</strong>: Which Phone is faster?</span></span></p>
+			<p style="line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><span style="color: rgb(33, 37, 41); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;">A) Phone with 2 GB&nbsp;</span><b style='box-sizing: border-box; font-weight: bolder; color: rgb(33, 37, 41); font-family: "times roman"; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;'>memory</b></span></p>
+			<p style="line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><span style="color: rgb(33, 37, 41); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;">B) Phone with 4 GB&nbsp;</span><b style='box-sizing: border-box; font-weight: bolder; color: rgb(33, 37, 41); font-family: "times roman"; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;'>memory</b></span></p>
+			<p style="line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><span style="box-sizing: border-box; color: rgb(33, 37, 41); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">Obviously 4GB, ye kya question tha. This is simple. But question is, jyada memory hone se phone fast kyu ho jaate hai?&nbsp;</span></span></p>
+			<p style="line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><span style="color: rgb(33, 37, 41); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;">If you know the answer, you already know the conclusion of below article.</span><span style="box-sizing: border-box;"><br style="box-sizing: border-box;">Lets have a question for everybody,&nbsp;</span><br style="box-sizing: border-box;"><span style="box-sizing: border-box;"><br style="box-sizing: border-box;"><b style="box-sizing: border-box; font-weight: bolder;">Q2)</b> can you answer below without using pen/pencil</span><br style="box-sizing: border-box;"></span></p>
+			<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><span style="box-sizing: border-box;"><br style="box-sizing: border-box;"></span></span></div>
+			<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><span style="box-sizing: border-box;">A) 75*7</span></span></div>
+			<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><span style="box-sizing: border-box;">B) <button class="btn btn-info btn-sm" style="box-sizing: border-box; border-radius: 0.2rem; margin: 0px; font-family: inherit; font-size: 0.875rem; line-height: 1.5; overflow: visible; text-transform: none; -webkit-appearance: button; display: inline-block; font-weight: 400; color: rgb(255, 255, 255); text-align: center; vertical-align: middle; cursor: pointer; user-select: none; background-color: rgb(23, 162, 184); border: 1px solid rgb(23, 162, 184); padding: 0.25rem 0.5rem; transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;" type="button">Click to Show</button></span></span></div>
+			<div style="box-sizing: border-box;">
+				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><span style="box-sizing: border-box;"><br style="box-sizing: border-box;"></span></span></div>
+				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><span style="box-sizing: border-box;">What is the easier choice from above? &nbsp;You all have answer A, right? &nbsp;Why? &nbsp;Becasue you could see A but option B was for a second.&nbsp;</span>B wale case mai number ko mind mai rakh pana mushkil tha.<br style="box-sizing: border-box;"><br style="box-sizing: border-box;">Again the next question,which mobile work fast?<br style="box-sizing: border-box;"><br style="box-sizing: border-box;">A) Phone with 2 GB <b style="box-sizing: border-box; font-weight: bolder;">memory</b><br style="box-sizing: border-box;">B) Phone with 4 GB <b style="box-sizing: border-box; font-weight: bolder;">memory</b><br style="box-sizing: border-box;"><br style="box-sizing: border-box;"><b style="box-sizing: border-box; font-weight: bolder;">Answer:</b> 4 GB, becasue this phone can have extra data in its memroy and process more at the very same time.<br style="box-sizing: border-box;"><br style="box-sizing: border-box;">Now, lets go back to the <b style="box-sizing: border-box; font-weight: bolder;">Q2,&nbsp;</b>and discuss the approach in both cases</span></div>
+				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><br style="box-sizing: border-box;"></span></div>
+				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><b style="box-sizing: border-box; font-weight: bolder;">Normal person&#39;s approach in Case of B:&nbsp;</b></span></div>
+				<div style="box-sizing: border-box;">
+					<ol style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; text-align: left;">
+						<li style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><b style="box-sizing: border-box; font-weight: bolder;">&nbsp;</b>He/She first try to remember the calculation of <span style="box-sizing: border-box;">75*7</span>, <i style="box-sizing: border-box;">100 tak ki table to sab yaad krte- hai na!</i></span></li>
+						<li style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><i style="box-sizing: border-box;">&nbsp;Agar</i> nahi yaad aaya to <b style="box-sizing: border-box; font-weight: bolder;">Trick&nbsp;</b>apply krne ki koshish krte hai.&nbsp;</span></li>
+						<li style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;">Ab agar Trick bhi apply nhi hui to, <b style="box-sizing: border-box; font-weight: bolder;"><span style="box-sizing: border-box; color: rgb(166, 77, 121);">to fir kya Paper-Pen uthao</span>&nbsp;</b>:) :)&nbsp;</span></li>
+						<li style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;">Exam mai aisa 2-4 baar or hua to, we will loose confidence. <span style="box-sizing: border-box; color: rgb(166, 77, 121);"><b style="box-sizing: border-box; font-weight: bolder;">Then hamari saari Tricks or Table ko yaad krne ki mehnat waste ho gayi.&nbsp;</b></span></span></li>
+					</ol>
+				</div>
+				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><br style="box-sizing: border-box;"></span></div>
+				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;">So what&#39;s is wrong in normal person&#39;s approach? TRICK? Table yaad Krna? &nbsp;Confused,right!!!&nbsp;</span></div>
+				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><br style="box-sizing: border-box;"></span></div>
+				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;">&nbsp;<i style="box-sizing: border-box;"><span style="box-sizing: border-box; color: rgb(106, 168, 79);"><b style="box-sizing: border-box; font-weight: bolder;">95% student do hardwork through-out the year but ye TRICKS na dkhokha de jaati hai-uff!!!&nbsp;</b></span></i></span></div>
+				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><br style="box-sizing: border-box;"></span></div>
+				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;">So what is the issue here? Kyu baar ratta maarte hai, practice krte hai or fir bhool jaate hai.<br style="box-sizing: border-box;"><br style="box-sizing: border-box;"></span></div>
+				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><b style="box-sizing: border-box; font-weight: bolder;">Issue:&nbsp;</b>Your mind is&nbsp;trained to remember calculations<b style="box-sizing: border-box; font-weight: bolder;">&nbsp;</b>not to<b style="box-sizing: border-box; font-weight: bolder;">&#39;process multiplication&#39; .&nbsp;</b>Like 2GB phone, which can not process faster than 4GB hence slow.<br style="box-sizing: border-box;"><b style="box-sizing: border-box; font-weight: bolder;">&nbsp;</b><span style="box-sizing: border-box; color: rgb(61, 133, 198);">&nbsp;</span><br style="box-sizing: border-box;"><span style="box-sizing: border-box; color: rgb(61, 133, 198);">Here comes the CONFIDENCE!! &nbsp;Your confidence to accept that you can do mental calculation.&nbsp;</span><br style="box-sizing: border-box;"><span style="box-sizing: border-box; color: rgb(61, 133, 198);"><br style="box-sizing: border-box;">Ab aapse koi puche 7*8 or 7+5, will you use Trick or Table? No, ye to hame bachpan se yaaad hai :)&nbsp;</span></span></div>
+				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><span style="box-sizing: border-box; color: rgb(61, 133, 198);">Then what&#39;s wrong with 78*7, ye bachpan se yaad nahi hai? Ye bhi yaad but thda alag tareeke se. -bas yha confidence loose kr dete hai or ratta shuru- <i style="box-sizing: border-box;">de Dana Dan!</i></span></span></div>
+				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;"><br style="box-sizing: border-box;"></span></div>
+				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
+					Calibri, sans-serif;">But kaise yaad hai 78*9, nahi hai yaad !<br style="box-sizing: border-box;"><br style="box-sizing: border-box;">Lets understand the problem first. Pahle bimari samzte hai fir treatment lenge, theek hai</span></div>
+			</div>
+			<p></p>
+			<p><br></p>
+
+		</div>
+	</div>
+
+    <div id="menu2" class="container tab-pane fade" style="font-family: times roman;"> <br> <br>
+        <b>Major Elements of Mental Calculation</b>:</span></h2>
+			<div>
+			<ul>
+			<li><span style="background-color: white;"><span style="color: blue;">Visualization</span></span></li>
+			<li><span style="background-color: white; color: blue;">Processing</span></li>
+			</ul>
+			</div>
+			<div>
+			<b>Visualization</b>:&nbsp; It means how long you can see any number in your mind. Aap jitna time Numbers of dimag mai rakh sakte ho utna mental calculation easy or fast hoga.<i> Like 4GB phone :)</i><br />
+			<br />
+			<i><span style="color: #6aa84f;"><b>If you can't keep number in mind then how will you give answer. am I right?</b></span></i><br />
+			<i><span style="color: #6aa84f;"><b><br /></b></span></i>
+			Do practice to keep ans see number in your mind. Make practice to see number, at least for 3 seconds in mind.<br />
+			<br />
+			<i><b><span style="color: #6aa84f;">Jab number dikhte hai to calculation ho jaati hai, :)</span></b></i><br />
+			<br />
+			Lets give practice a chance: <button type="button" class="btn " ng-click="showLst();">  Click to see for 5 seconds</button>
+				 <ul ng-hide="hideLst"> 
+				   <li>675</li>
+				   <li>56*8</li>
+				   <li>33/78</li>
+				   <li>56+98</li>
+				   <li>678-987</li>
+				 </ul></div>
+			<div>
+			<br /></div>
+			<div>
+			2) <b>Processing</b>:&nbsp;<span style="background-color: white; color: #3c4043; font-family: &quot;arial&quot; , sans-serif; font-size: 14px;">A&nbsp;</span><span style="font-family: &quot;georgia&quot; , &quot;times new roman&quot; , serif;"><span style="background-color: white; color: #52565a; font-size: 14px; font-weight: bold;">process</span><span style="background-color: white; color: #3c4043; font-size: 14px;">&nbsp;</span></span><span style="background-color: white; color: #3c4043; font-family: &quot;arial&quot; , sans-serif; font-size: 14px;">is a series of steps and decisions involved to complete any work.</span><br />
+			<span style="background-color: white; color: #3c4043; font-family: &quot;arial&quot; , sans-serif; font-size: 14px;"><br /></span>
+			<span ><span style="background-color: white; font-size: 14px;"><span style="color: #3c4043;">Try to remember how you learned riding a bi-cycle. Now you can cycle anywhere-because you learned it and know the process. It might take 2-3 months to learn, but now , ab to uda sakte hai. </span><b><span style="color: #6aa84f;"><i>Yes, here you need think again.Do practice smart Process,fir calculcation bhi udegi :</i>)</span></b></span></span><br />
+			<br />
+			Lets learn multiplication of&nbsp;<b><span style="color: blue;">7</span></b><b><span style="color: #b45f06;">8</span></b>*<b>9&nbsp;</b> in 8 steps. 8 steps, 😈. No worries, upar cycle wali story yaad kro. Choti cheez ko pahle bade steps mai todenge, or fir chote-chote steps to hum chutkiyo mai aise karenge ki mind ko bhi nahi pta lagega.😎<br />
+			<br />
+			<b>Step 1:</b>&nbsp;Try to see in your mind 7<span style="color: #b45f06;"><b>8</b></span>*<b>9</b><br />
+			<b>Step 2: </b>Now do calculation:<b> <span style="color: #bf9000;">8</span>*9 </b>(hope you are still seeing<b> <span style="color: #bf9000;">8</span>*9 </b>in your mind)<br />
+			<b>Step 3:</b> <b><span style="color: #e69138;">Keep in mind 72&nbsp;</span></b><br />
+			<b>Step 4: </b>now do next multiplication<b> </b>7*9= 63<br />
+			<b>Step 5:&nbsp;</b><span style="color: orange;"><b><span style="color: orange;">Keep in mind 6</span><span style="color: #444444;">3</span><span style="color: orange;"> and hope you still have </span><span style="color: #444444;">7</span><span style="color: orange;">2 in your mind.</span></b></span><br />
+			<b>Step 6: </b>add <b>3</b>+<b>7</b>=10 (<b style="color: orange;">keep trying to see '</b><b>6 0 2</b><b style="color: orange;">' in mind&nbsp;</b>)<br />
+			<b>Step 7: 6+1 <span style="color: orange;">(keep in mind 7 0 2</span>)</b><br />
+			<b>Step 8: <span style="color: magenta;"><u>Answer is 702</u></span></b><br />
+			<b><br /></b>
+			<b>Long-story short, you did it in Three parts:</b><br />
+			<b>A) 8*9= 72&nbsp;</b><br />
+			<b>B) 7*9= 63</b><br />
+			<b>C) 63+7= 70</b><br />
+			<b>D) And 702 is YOUR ANSWER!!!</b><br />
+			<b><br /></b>
+			<span style="color: blue; font-weight: bold;">Moral of Story: </span>You can multiply the 78*9 or any number. Just see above four steps (A,B,C,D)<br />
+			<b style="color: blue;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b>is it difficult for you do? No, the only thing you have to beileve in yourself and do practise to keep number in your mind<i><span style="color: #0b5394;"><b>- Retaintivity 😇</b></span></i><br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br /> </div>
+    </div>
+</div>
+
+</body>
+</html>

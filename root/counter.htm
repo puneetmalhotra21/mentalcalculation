@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+	
+	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="resources/script/counter.js"></script>
+    <link rel="stylesheet" type="text/css" href="resources/CSS/counter.css">
+	<style>
+      
+	</style>
+	</head>
+	<body>
+
+        <div> <button ng-click="callSwitch();"  id="cbtn" class="btn btn-sm">Click</button> <br/> <br/></div>
+		<div class="progress" ng-app="cntrApp" ng-controller="cntrCtlr" >  <!--  -->
+			<svg class="progress-circle" width="200px" height="200px" xmlns="http://www.w3.org/2000/svg">
+				<circle class="progress-circle-back"
+						cx="150" cy="150" r="24"></circle>
+				<circle id="prgrscrcl" class="progress-circle-prog"
+						cx="150" cy="150" r="24"></circle>
+			</svg>
+			  <div class="progress-text" id="dId" data-progress="0"></div>
+		</div>	
+    </body>
+    
+    <script>
+        var x =25;
+       
+        progressBar(x,34);
+        
+        function progressBar(prcntg,radius) {
+            var x = document.querySelector('.progress-circle-prog');
+            
+            x.style.strokeDasharray = (6.28*radius*prcntg)/100 + ' '+ 6.28*radius;
+        
+        }
+
+    </script> 
+</html>
