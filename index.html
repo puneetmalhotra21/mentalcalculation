@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="resources/CSS/index.css">
 		<link rel="stylesheet" type="text/css" href="resources/CSS/counter.css">
-		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -29,15 +29,26 @@
 						<div class="col-md-6" id="clcOpt">
 							<div class="row" style="margin-top: 2%;">								
 								<div class="col-6 col-md-3">
-									<button type="button" class="btn" ng-click="go=true;strtCntr();" ng-disabled="(drlopt=='2x2'||drlopt=='1x2'||drlopt=='1x1'? false:true)" disabled="disabled" >Start</span></button>				      					
+								<!--	<button  type="button" class="btn" ng-click="go=true;strtCntr();" ng-disabled="(drlopt=='2x2'||drlopt=='1x2'||drlopt=='1x1'? false:true)" disabled="disabled">Start</button>				      					
+								   --> <span id="tooltip" class="d-inline-block" tabindex="0" data-placement="right" data-toggle="tooltip" title="Choose range e.g. 1X1">
+								
+										<button id="strtbtn" type="button" style="pointer-events: none;" class="btn" ng-click="go=true;strtCntr();" ng-disabled="(drlopt=='2x2'||drlopt=='1x2'||drlopt=='1x1'? false:true)" >Start</button>
+										
+									</span>
 								</div>
+
+								
+								
 								<div class="col-6 col-md-9" >
-									<div id="counter" style="display:none" >
+									<div id="counter" style="display:none"  >
 										<svg  class="progress-circle" width="100px" height="100px" xmlns="http://www.w3.org/2000/svg">
 											<circle class="progress-circle-back" cx="35" cy="27" r="24"></circle>
 											<circle id="prgrscrcl" class="progress-circle-prog" cx="35" cy="27" r="24"></circle>
 										</svg>
+										<span ng-bind="cntrVal"></span>  
 									</div>
+									
+										
 									<div id="scrbrd" style="display:none">
 										<button type="button" class="btn " style="background-color: #4267b2;">
 											<span style="color: #e4ff00;font-style: bold;font-weight: 52px;font-weight: 600;"> Time Up! </span>
@@ -71,7 +82,7 @@
 							<div class="row" style="margin-top: 1%;">
 								<div class="col-md-12">
 								<div class="custom-control custom-radio">
-										<input type="radio" class="custom-control-input" id="optdrl" name="optdrl" ng-model="drlopt" value="1x1" checked>
+										<input type="radio" class="custom-control-input" id="optdrl" name="optdrl" ng-model="drlopt" value="1x1"  ng-click="dsblToolTip();" checked>
 										<label class="custom-control-label" for="optdrl" style="font-size: small;">1x1 &nbsp; (0 to 9)x(0 to 9	)</label>
 									</div>   
 								</div>
@@ -79,7 +90,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="custom-control custom-radio">
-										 <input type="radio" class="custom-control-input" id="optdrl1" name="optdrl1" value="1x2" ng-model="drlopt">
+										 <input type="radio" class="custom-control-input" id="optdrl1" name="optdrl1"  value="1x2" ng-model="drlopt" ng-click="dsblToolTip();">
 										<label class="custom-control-label" for="optdrl1" style="font-size: small;">1x2 &nbsp; (0 to 9)x(10 to 99)</label>
 									</div>   
 								</div>
@@ -87,7 +98,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									 <div class="custom-control custom-radio">
-										<input type="radio" class="custom-control-input" id="optdrl2" name="optdrl2" value="2x2" ng-model="drlopt" >
+										<input type="radio" class="custom-control-input" id="optdrl2" name="optdrl2" value="2x2" ng-model="drlopt" ng-click="dsblToolTip();" >
 										<label class="custom-control-label" for="optdrl2" style="font-size: small;">2x2 &nbsp; (10 to 99)x(10 to 99)</label>
 									</div> 
 								</div>

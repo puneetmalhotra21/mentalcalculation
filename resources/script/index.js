@@ -1,15 +1,21 @@
 var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
-var count=25;
+var count=120;
 var now = new Date().getTime();
 var distance = countDownDate - now;
-
 var app = angular.module("clcApp",[]);
 		 
-app.controller("drlCtlr",function($scope){
-			
+app.controller("drlCtlr",function($scope,$timeout){
+   
+	var updateCounter = function() {
+		$timeout(updateCounter, 1000);
+	};
+	updateCounter();
+
 	$( document ).ready(function() {
 		$("#scope.content").load("blog.htm");
+		$('[data-toggle="tooltip"]').tooltip();   
 	});
+    
     $scope.score=0;
 	$scope.num1=1;  
 	$scope.num2= 9;
@@ -23,54 +29,51 @@ app.controller("drlCtlr",function($scope){
 	$scope.prcntg=50;
 	$scope.radius=24;
 
-	$scope.strtCntr = function(){ 
-		var conCount=count;
-		console.log('hell'+document.getElementById('prgrscrcl'));
-		document.getElementById('counter').style="display:block";
-		var rstrt =false;
-	//	if(document.getElementById("counter").innerHTML=='Time Up!'){
+	//$scope.cntrVal = 100;
 
+	
+	$scope.dsblToolTip = function(){
+		$('[data-toggle="tooltip"]').tooltip('disable');  
+		document.getElementById("strtbtn").style="";
+	};
+
+	$scope.strtCntr = function(){ 
+		
+		var conCount=count;
+		
+		document.getElementById('counter').style="display:block";
 		if($scope.timeUp==true){
 			$scope.timeUp=false;
 			$scope.prcntg=50;
-			count=25;
+			count=120;
 			$scope.score=0;
 			conCount=count;
 			document.getElementById('counter').style="display:block";
 			document.getElementById('prgrscrcl').style.stroke="#68b242";
 			document.getElementById('scrbrd').style="display:none";
-			//document.getElementById('tymUp').style="display:none";
-		//	document.getElementById('scrbrd').style.display:none;
 			
 		}
-		
-		
-		if(!rstrt){
-			var x = setInterval(function() {
-				console.log('count#::'+count+':::'+conCount);
-				$scope.prcntg= (100-(count/conCount)*100);
-				//console.log('A#::'+$scope.prcntg);
-				$scope.progressBar();
-				
-				count=count-1;
-				if (distance < 0 || count<0) {
-					
-				   clearInterval(x);
-				   $scope.timeUp=true;
-				}
-			}, 1000); 
+       
+		var x = setInterval(function() {
+			$scope.prcntg= (100-(count/conCount)*100);
 
+			$scope.progressBar();
+			$scope.cntrVal = count;	
+			count=count-1;
+			
+
+			if (distance < 0 || count<0) {
+				clearInterval(x);
+				$scope.timeUp=true;
+			}
+		}, 1000); 
 		
-		}
-		
-		
-    }
+	}
+
 	$scope.progressBar = function(){
 
 		var x = document.getElementById("prgrscrcl");
-		console.log('%::'+$scope.prcntg);
 		x.style.strokeDasharray = (6.28*$scope.radius*$scope.prcntg)/100 + ' '+ 6.28*$scope.radius;
-		console.log('$scope.prcntg:AA::'+$scope.prcntg);
 		
 		if($scope.prcntg>25&&$scope.prcntg<=50){
 			document.getElementById('prgrscrcl').style.stroke="brown";
@@ -81,14 +84,9 @@ app.controller("drlCtlr",function($scope){
           
 
 		}else if($scope.prcntg==100){
-		
-		//	document.getElementById('tymUp').style="color:red;display:block";
 			document.getElementById('scrbrd').style="display:block";
 			document.getElementById('counter').style="display:none";
-			
-		}	
-		
-		//count=5;
+		}
 	}
 	
 	$scope.nxtQstn = function(){
@@ -124,4 +122,3 @@ app.controller("drlCtlr",function($scope){
 
    
 });
-	     // Calculation App Script Ends

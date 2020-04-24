@@ -11,18 +11,21 @@
   <link rel="stylesheet" type="text/css" href="resources/CSS/blog.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script>
+
 var app = angular.module('tempApp', []);
+
 app.controller('tempCntrlr', function($scope, $interval) {
   
   $scope.showNum = function() {
 	  $scope.count = 0;
+	  $scope.showVal=true;
 		var x= $interval(function () {
 			  $scope.count++;
-			  ;
+			  
 		  if($scope.count>=1){
 			   $scope.showVal=false;
 			   $interval.cancel(x);
-			   console.log('asd');
+			   console.log('asd1');
 		  }
 		  
 		}, 500);
@@ -108,7 +111,9 @@ app.controller('tempCntrlr', function($scope, $interval) {
 			<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
 					Calibri, sans-serif;"><span style="box-sizing: border-box;">A) 75*7</span></span></div>
 			<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
-					Calibri, sans-serif;"><span style="box-sizing: border-box;">B) <button class="btn btn-info btn-sm" style="box-sizing: border-box; border-radius: 0.2rem; margin: 0px; font-family: inherit; font-size: 0.875rem; line-height: 1.5; overflow: visible; text-transform: none; -webkit-appearance: button; display: inline-block; font-weight: 400; color: rgb(255, 255, 255); text-align: center; vertical-align: middle; cursor: pointer; user-select: none; background-color: rgb(23, 162, 184); border: 1px solid rgb(23, 162, 184); padding: 0.25rem 0.5rem; transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;" type="button">Click to Show</button></span></span></div>
+					Calibri, sans-serif;"><span style="box-sizing: border-box;">B) <button class="btn  btn-sm" style="box-sizing: border-box;  font-family: inherit; font-size: 0.875rem; color: white"  ng-hide="showVal" ng-click ="showNum();" type="button">Click to Show</button></span></span>
+					<span ng-hide="!showVal"> 34*9</span>
+				</div>
 			<div style="box-sizing: border-box;">
 				<div style="box-sizing: border-box; line-height: 1; text-align: justify;"><span style="font-family: 
 					Calibri, sans-serif;"><span style="box-sizing: border-box;"><br style="box-sizing: border-box;"></span></span></div>
