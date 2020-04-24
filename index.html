@@ -18,11 +18,12 @@
 			<h1 class="text-center">Mental Calculation</h1>
 		</div>
 	
-		<div class="container-fluid" ng-app="clcApp" ng-controller="drlCtlr" ng-init="inpt1=2;aVar=true;playgame=false;timeUp=false;go=false">
+		<div class="container-fluid" ng-app="clcApp" ng-controller="drlCtlr" ng-init="inpt1=2;aVar=true;playgame=false;timeUp=false;go=false;">
 			<div>				
-				<button ng-click="playgame==false?playgame=true:playgame=false;callSwitch();"  id="mbtn" class="btn btn-sm btn-primary">Tutorial</button> <br/> <br/>				
+			<!--	<button  class="button"   ng-click="playgame==false?playgame=true:playgame=false;callSwitch();"  > {{secname}} </button> <br/> <br/> -->
+				<div id="mbtn" class="button" ng-click="playgame==false?playgame=true:playgame=false;callSwitch();" > {{secname}}</div> 
 			</div>
-			
+			<br/>
 			<div class="row">
 			    <div class="col-md-6 card">
 				    <div class="row"> 
@@ -45,7 +46,7 @@
 											<circle class="progress-circle-back" cx="35" cy="27" r="24"></circle>
 											<circle id="prgrscrcl" class="progress-circle-prog" cx="35" cy="27" r="24"></circle>
 										</svg>
-										<span ng-bind="cntrVal"></span>  
+										<span style="font-size: 32px;" ng-bind="cntrVal"></span>  
 									</div>
 									
 										

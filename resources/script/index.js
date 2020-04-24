@@ -28,9 +28,8 @@ app.controller("drlCtlr",function($scope,$timeout){
 	
 	$scope.prcntg=50;
 	$scope.radius=24;
-
-	//$scope.cntrVal = 100;
-
+	
+	$scope.secname="Tutorial";
 	
 	$scope.dsblToolTip = function(){
 		$('[data-toggle="tooltip"]').tooltip('disable');  
@@ -113,10 +112,12 @@ app.controller("drlCtlr",function($scope,$timeout){
 		document.getElementById("clcOpt").style="display:none";
 		document.getElementById("clcgame").style="display:none";
 		document.getElementById("artcl").style="display:block";
+		$scope.secname="Game";
 		}else{
 			document.getElementById("clcOpt").style="display:block";
 			document.getElementById("clcgame").style="display:block";
 			document.getElementById("artcl").style="display:none";
+			$scope.secname="Tutorial";
 		}
     };
 
